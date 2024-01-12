@@ -107,7 +107,7 @@
 
 <script>
 
- function Solve(val) {
+function Solve(val) {
    var v = document.getElementById('res');
    v.value += val;
 }
@@ -115,7 +115,16 @@
 function Result() {
    var num1 = document.getElementById('res').value;
    var num2 = eval(num1);
-   document.getElementById('res').value = num2;
+
+   if (num1 === '') {
+
+      document.getElementById('res').value = "Enter a valid expression";
+   } else if (num2 === Infinity || num2 === -Infinity) {
+
+      document.getElementById('res').value = "Cannot divide by zero!";
+   } else {
+      document.getElementById('res').value = num2;
+   }
 }
 
 function Clear() {
