@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Calculator</title>
+
+   <style>
+
+      body{
+         background-color: whitesmoke;
+         display: grid;
+         height:100vh;
+         place-items: center;
+      }
+      h1{
+      margin-left: 150px;
+      }
+      
+      .main{
+         width: 400px;
+         height: 350px;
+         background-color: #ADEB87;
+         border: 5px double rgb(0, 0, 0);
+         border-radius: 10px;
+         border-style: double;
+      }
+
+      .main input[type='text'] {
+         width: 345px;
+         position: relative;
+         height: 60px;
+         top: 5px;
+         text-align: right;
+         padding: 3px 6px;
+         font-size: 30px;
+         border: 5px black;
+         border: double;
+         display: flex;
+         margin: auto;
+         border-radius: 6px;
+         color: black;
+      }
+
+      .btn input[type='button']{
+         width:90px;
+         padding: 2px;
+         margin: 2px 0px;
+         position: relative;
+         left: 13px;
+         top: 20px;
+         height: 60px;
+         cursor: pointer;
+         font-size: 18px;
+         transition: 0.5s;
+         background-color: #495250;
+         border-radius: 6px;
+         color: white;
+      }
+      .btn input[type='button']:hover{
+         background-color: black;
+         color: white;
+      }
+
+      </style>
+
+
+
+</head>
+<body>
+   <section>
+   <h1>Calculator</h1>
+   <div class="main">
+
+      <input type="text" id = 'res'>
+
+      <div class="btn">
+
+         <input type="button" value = '1' onclick = "Solve('1')">
+         <input type="button" value = '2' onclick = "Solve('2')">
+         <input type="button" value = '3' onclick = "Solve('3')">
+         <input type="button" value = 'C' onclick = "Clear('C')">
+
+         <br>
+         <input type="button" value = '6' onclick = "Solve('6')">
+         <input type="button" value = '5' onclick = "Solve('5')">
+         <input type="button" value = '4' onclick = "Solve('4')">
+         <input type="button" value = '+' onclick = "Solve('+')">
+
+         <br>
+         <input type="button" value = '7' onclick = "Solve('7')">
+         <input type="button" value = '8' onclick = "Solve('8')">
+         <input type="button" value = '9' onclick = "Solve('9')">
+         <input type="button" value = '-' onclick = "Solve('-')">
+
+         <br>
+         <input type="button"  id ='zero' value = '0' onclick = "Solve('0')">
+         <input type="button" value = '*' onclick = "Solve('*')">
+         <input type="button" value = '/' onclick = "Solve('/')">
+         <input type="button" value = '=' onclick = "Result()">
+         
+      </div>
+   </div>
+</section>
+
+
+
+<script>
+
+ function Solve(val) {
+   var v = document.getElementById('res');
+   v.value += val;
+}
+
+function Result() {
+   var num1 = document.getElementById('res').value;
+   var num2 = eval(num1);
+   document.getElementById('res').value = num2;
+}
+
+function Clear() {
+   var inp = document.getElementById('res');
+   inp.value = '';
+}
+</script>
+ 
+
+</body>
+</html>
